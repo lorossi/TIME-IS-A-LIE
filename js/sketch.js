@@ -2,12 +2,12 @@ class Sketch extends Engine {
   setup() {
     // parameters
     this._word = "TIME IS A LIE ".split("");
-    this._cols = 20;
-    this._duration = 720;
+    this._duration = 900;
     this._recording = false;
     this._show_fps = false;
     // sketch setup
     console.clear();
+    this._cols = this._word.length + 1;
     this._phase_duration = this._duration / 4;
     this._scl = this._width / this._cols;
     this._invert = false;
@@ -105,7 +105,7 @@ class Sketch extends Engine {
     }
     // handle recording
     if (this._recording) {
-      if (this._frameCount <= this._duration) {
+      if (this._frameCount < this._duration) {
         this._capturer.capture(this._canvas);
       } else {
         this._recording = false;
