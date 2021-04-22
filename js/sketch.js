@@ -34,14 +34,14 @@ class Sketch extends Engine {
     if (elapsed % (this._phase_duration * 2) == 0) this._invert = !this._invert;
     // position offset
     let dx, dy;
-    if (period % 2 == 0) {
-      const dir = this._invert ? -1 : 1;
+    if (period % 2 == 1) {
+      const dir = this._invert ? 1 : -1;
       const percent = easeInOut((elapsed % this._phase_duration) / this._phase_duration);
       // up-down
       dx = 0;
       dy = percent * (this._scl * this._word.length) * dir;
     } else {
-      const dir = this._invert ? -1 : 1;
+      const dir = this._invert ? 1 : -1;
       const percent = easeInOut((elapsed % this._phase_duration) / this._phase_duration);
       // left-right
       dx = percent * (this._scl * this._word.length) * dir;
