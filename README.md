@@ -14,6 +14,7 @@ FFmpeg command used to stitch frames together: `ffmpeg -y -r 60 -i frames/%07d.p
 
 ## Instagram caption
 
+2021-05-19⠀
 Ford Prefect tried to warn us all. "Time is an Illusion.: Lunchtime doubly so.".⠀
 I can't say he was wrong, but I feel he was not correct.⠀
 GitHub repo: https://github.com/lorossi/TIME-IS-A-LIE ⠀
@@ -21,4 +22,5 @@ GitHub repo: https://github.com/lorossi/TIME-IS-A-LIE ⠀
 ⠀
 ⠀
 ⠀
-#creativacoding #animation #javascript #perfectloop #wannabedesigner⠀
+⠀
+#digitalart #illustration #wannabedesigner #creativecoding #perfectloop⠀
