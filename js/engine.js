@@ -47,8 +47,6 @@ class Engine {
     // updated last frame rendered time
     this.then = performance.now();
     // compute frame rate
-    // update frame count
-    this._frameCount++;
     // update fpsBuffer
     this._fpsBuffer.unshift(1000 / diff);
     this._fpsBuffer = this._fpsBuffer.splice(0, 30);
@@ -58,6 +56,9 @@ class Engine {
     this._ctx.save();
     this.draw();
     this._ctx.restore();
+
+    // update frame count
+    this._frameCount++;
   }
 
   _calculate_press_coords(e) {

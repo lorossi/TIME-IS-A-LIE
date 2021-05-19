@@ -3,7 +3,7 @@ class Sketch extends Engine {
     // parameters
     this._word = "TIME IS A LIE ".split("");
     this._duration = 900;
-    this._recording = false;
+    this._recording = true;
     this._show_fps = false;
     // sketch setup
     console.clear();
@@ -15,9 +15,6 @@ class Sketch extends Engine {
     if (this._recording) {
       this._capturer = new CCapture({ format: "png" });
       this._capturer_started = false;
-      this._save_frames = [1];
-      for (let i = 0; i < 10; i++) this._save_frames.push(random_int(1, this._duration));
-      console.log(this._save_frames);
     }
 
   }
@@ -107,12 +104,9 @@ class Sketch extends Engine {
       this._ctx.fillText(parseInt(this._frameRate), 40, 40);
       this._ctx.restore();
     }
+
     // handle recording
     if (this._recording) {
-      if (this._save_frames.includes(this._frameCount)) {
-        this.saveFrame();
-      }
-
       if (this._frameCount < this._duration) {
         this._capturer.capture(this._canvas);
       } else {
