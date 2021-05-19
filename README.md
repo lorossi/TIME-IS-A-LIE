@@ -9,3 +9,16 @@ View this animation in action on my [Instagram profile](https://www.instagram.co
 ## Details
 
 Font used: [Hack](https://sourcefoundry.org/hack/)
+
+FFmpeg command used to stitch frames together: `ffmpeg -y -r 60 -i frames/%07d.png -c:a aac -b:a 256k -ar 44100 -c:v libx264 -pix_fmt yuv420p -r 60 video_h264.mp4`
+
+## Instagram caption
+
+Ford Prefect tried to warn us all. "Time is an Illusion.: Lunchtime doubly so.".⠀
+I can't say he was wrong, but I feel he was not correct.⠀
+GitHub repo: https://github.com/lorossi/TIME-IS-A-LIE ⠀
+⠀
+⠀
+⠀
+⠀
+#creativacoding #animation #javascript #perfectloop #wannabedesigner⠀
