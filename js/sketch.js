@@ -3,7 +3,7 @@ class Sketch extends Engine {
     // parameters
     this._word = "TIME IS A LIE ".split("");
     this._duration = 900;
-    this._recording = true;
+    this._recording = false;
     this._show_fps = false;
     // sketch setup
     console.clear();
