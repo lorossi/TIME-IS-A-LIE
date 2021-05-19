@@ -15,7 +15,11 @@ class Sketch extends Engine {
     if (this._recording) {
       this._capturer = new CCapture({ format: "png" });
       this._capturer_started = false;
+      this._save_frames = [1];
+      for (let i = 0; i < 10; i++) this._save_frames.push(random_int(1, this._duration));
+      console.log(this._save_frames);
     }
+
   }
 
   draw() {
@@ -105,6 +109,10 @@ class Sketch extends Engine {
     }
     // handle recording
     if (this._recording) {
+      if (this._save_frames.includes(this._frameCount)) {
+        this.saveFrame();
+      }
+
       if (this._frameCount < this._duration) {
         this._capturer.capture(this._canvas);
       } else {
@@ -120,4 +128,10 @@ class Sketch extends Engine {
 
 const easeInOut = x => {
   return -(Math.cos(Math.PI * x) - 1) / 2;
+};
+
+const random_int = (a, b) => {
+  if (a == undefined && b == undefined) return random_int(0, 1);
+  else if (b == undefined) return random_int(0, a);
+  else if (a != undefined && b != undefined) return Math.floor(Math.random() * (b - a + 1)) + a;
 };
